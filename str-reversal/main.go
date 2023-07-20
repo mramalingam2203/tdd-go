@@ -2,14 +2,17 @@
 
 package main
 
+import "fmt"
+
 func main() {
 	s := "hello world"
+	fmt.Println(stringReverse(s))
 }
 
 func stringReverse(s string) string {
 	result := []byte{}
-	// for _, v := range s {
-	// 	result = append(result, s[len(s)-v-1])
-	// }
+	for i := 0; i < len(s); i++ {
+		result = append(result, s[len(s)-(i+1)])
+	}
 	return string(result)
 }
